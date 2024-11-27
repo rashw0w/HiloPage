@@ -7,11 +7,9 @@
   --white: #ffffff;
   --max-width: 1200px;
   --gradient-1: linear-gradient(to right bottom, #f77d6b, #9e1fdb);
-  --gradient-2: linear-gradient(
-    to right bottom,
-    var(--white) 25%,
-    var(--primary-color)
-  );
+  --gradient-2: linear-gradient(to right bottom,
+      var(--white) 25%,
+      var(--primary-color));
 }
 
 * {
@@ -169,45 +167,14 @@ body {
   background-color: var(--white);
 }
 
-.skill__container {
-  padding-block: 0;
-}
-
-.skill__container h2 {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  background: var(--gradient-2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: center;
-}
-
-.skill__flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.skill__flex span {
-  font-size: 2.5rem;
-  background: var(--gradient-2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 .project__container h2 {
   margin-bottom: 4rem;
   font-size: 2rem;
   font-weight: 700;
-  background: linear-gradient(
-    to right bottom,
-    #f77d6b 25%,
-    var(--primary-color-dark)
-  );
+  background: linear-gradient(to right bottom,
+      #f77d6b 25%,
+      var(--primary-color-dark));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
@@ -246,6 +213,9 @@ body {
 }
 
 .project__card__details a {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
   font-size: 1.5rem;
   color: var(--white);
 }
@@ -254,11 +224,9 @@ body {
   margin-bottom: 4rem;
   font-size: 2rem;
   font-weight: 700;
-  background: linear-gradient(
-    to right bottom,
-    #9e1fdb 25%,
-    var(--primary-color-dark)
-  );
+  background: linear-gradient(to right bottom,
+      #9e1fdb 25%,
+      var(--primary-color-dark));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
@@ -392,50 +360,116 @@ footer {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-@media (width < 200px) {
+
+
+@media (max-width: 575px) {
+  body {
+    font-size: 0.9rem;
+    /* Reducir el tamaño global de fuente */
+  }
+
   nav {
     background-color: var(--primary-color);
   }
+
+  .nav__menu__btn {
+    display: block;
+    /* Mostrar el botón del menú en pantallas pequeñas */
+  }
+
+  .nav__links {
+    display: none;
+    /* Esconder los enlaces por defecto */
+    flex-direction: column;
+    gap: 1rem;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .nav__links.open {
+    display: flex;
+    /* Mostrar los enlaces cuando el menú esté abierto */
+  }
+
   .project__card__details h4 {
-    font-size: 0.8rem;
+    font-size: 0.6rem; /* Reducir el tamaño del texto en las tarjetas */
     font-weight: 500;
     color: var(--white);
   }
 
-  .nav__bar {
-    position: static;
-    padding: 1.75rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+  .project__card__details p {
+    font-size: 0.8rem; /* Texto más pequeño para la descripción */
   }
 
-  .nav__header {
-    padding: 0;
-    background-color: transparent;
+  .header__container h1 {
+    font-size: 2rem;
+    /* Reduce el tamaño del título */
+    line-height: 2.5rem;
+    /* Ajusta la altura de línea */
+    margin-bottom: 1rem;
+    /* Reduce el margen inferior */
   }
 
-  .nav__menu__btn {
-    display: none;
+  .header__container img {
+    max-width: 150px;
+    /* Reduce el tamaño de la imagen */
+    margin-bottom: 1.5rem;
+    /* Ajusta el margen inferior */
   }
 
-  .nav__links {
-    position: static;
-    padding: 0;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 4rem;
-    background-color: transparent;
-    transform: none;
-    z-index: 1;
+  .header__container p {
+    font-size: 1rem;
+    /* Reduce el tamaño del texto */
+    margin-bottom: 1rem;
+    /* Ajusta el margen inferior */
   }
 
-  .skill__flex {
-    gap: 2rem;
+  .header__btns {
+    flex-wrap: wrap;
+    /* Permite que los botones se ajusten */
+    gap: 0.5rem;
+    /* Reduce el espaciado entre botones */
   }
 
-  .project__grid {
-    grid-template-columns: repeat(3, 1fr);
+  .header__btns .btn {
+    padding: 0.5rem 1rem;
+    /* Reduce el padding de los botones */
+    font-size: 0.875rem;
+    /* Reduce el tamaño del texto en botones */
   }
+
+  .header__btns a {
+    padding: 0.5rem 1rem;
+    /* Reduce el padding del enlace */
+    font-size: 0.875rem;
+    /* Reduce el tamaño del texto en enlaces */
+  }
+
+  .project__card__details p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limitar a 2 líneas */
+    -webkit-box-orient: vertical;
+    overflow: hidden; /* Ocultar el texto excedente */
+    font-size: 0.5rem;
+    color: var(--primary-color-light);
+    line-height: 1.4;
+  }
+
+  .project__card__details a {
+    position: absolute;
+    bottom: 10px; /* Ajuste para colocar el botón hacia abajo */
+    right: 10px; /* Ajuste para colocar el botón a la derecha */
+    font-size: 0.6rem; /* Tamaño del ícono */
+    color: var(--white); /* Cambiar color si es necesario */
+    transition: color 0.3s ease;
+  }
+  .project__card__details a:hover {
+    color: var(--primary-color-light); /* Cambio de color al pasar el ratón */
+  }
+
+
 }

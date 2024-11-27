@@ -13,6 +13,8 @@ navLinks.addEventListener("click", (e) => {
   navLinks.classList.remove("open");
   menuBtnIcon.setAttribute("class", "ri-menu-line");
 });
+const showMoreButtons = document.querySelectorAll(".show-more");
+
 
 const scrollRevealOption = {
   distance: "50px",
