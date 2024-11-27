@@ -392,7 +392,7 @@ footer {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-@media (width < 575px) {
+@media (width < 450px) {
   nav {
     background-color: var(--primary-color);
   }
