@@ -5,7 +5,7 @@
   --primary-color-dark: #161513;
   --primary-color-light: #a3a3a3;
   --white: #ffffff;
-  --max-width: 1500px;
+  --max-width: 1200px;
   --gradient-1: linear-gradient(to right bottom, #f77d6b, #9e1fdb);
   --gradient-2: linear-gradient(
     to right bottom,
@@ -216,6 +216,7 @@ body {
 .project__grid {
   display: grid;
   gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .project__card {
@@ -352,6 +353,53 @@ footer {
 @media (width > 768px) {
   nav {
     background-color: var(--primary-color);
+  }
+
+  .nav__bar {
+    position: static;
+    padding: 1.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .nav__header {
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav__menu__btn {
+    display: none;
+  }
+
+  .nav__links {
+    position: static;
+    padding: 0;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 4rem;
+    background-color: transparent;
+    transform: none;
+    z-index: 1;
+  }
+
+  .skill__flex {
+    gap: 2rem;
+  }
+
+  .project__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (width < 575px) {
+  nav {
+    background-color: var(--primary-color);
+  }
+  .project__card__details h4 {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--white);
   }
 
   .nav__bar {
